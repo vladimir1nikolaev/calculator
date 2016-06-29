@@ -1,0 +1,103 @@
+.container {
+    width: 690px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+h1 {
+    text-align: center;
+    font-size: 24px;
+    font-family: Verdana;
+}
+
+.top-string-align {
+    padding-top: 10px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.result-string {
+    text-align: right;
+    padding-right: 5px;
+}
+
+input[type="text"] {
+    border: 3px solid #cccccc;
+    border-radius: 5px;
+    outline: none;
+    height: 24px;
+    width: 356px;
+    color: #cccccc;
+    font-size: 18px;
+    font-family: Tahoma;
+}
+
+.button-decimal {
+    background-color: #e0e0e0;
+    border-radius: 6px;
+    border: 1px solid #dcdcdc;
+    display: inline-block;
+    color: #666666;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 6px 24px;
+    text-decoration: none;
+    text-align: center;
+    height: 25px;
+    width: 20px;
+}
+
+.button-decimal:hover {
+    background-color: #E0E07D;
+}
+
+.button-decimal:active {
+    position: relative;
+    top: 1px;
+}
+
+.button-operator {
+    background-color: #32C3FB;
+    border-radius: 6px;
+    border: 1px solid #dcdcdc;
+    display: inline-block;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 15px;
+    padding: 6px 24px;
+    text-decoration: none;
+    text-align: center;
+    height: 25px;
+    width: 20px;
+}
+
+.button-operator:hover {
+    background-color: #32C391;
+}
+
+.button-operator:active {
+    position: relative;
+    top: 1px;
+}
+
+sup {
+    top: -.5em;
+    position: relative;
+    font-size: 75%;
+    line-height: 0;
+    vertical-align: baseline;
+}
+
+.buttons-row {
+    margin-top: 10px;
+    display: inline-block;
+    position: relative;
+    /*padding-left: 283px;*/
+    float: right;
+    clear: both;
+    margin-right: 162px;
+}
