@@ -103,7 +103,11 @@ sup {
     font-family: Tahoma;
 }
 
-.b-buttons {
+.b-button {
+
+}
+
+.b-button__item {
     font-family: Arial;
     font-size: 15px;
     padding: 6px 24px;
@@ -118,18 +122,18 @@ sup {
     margin-left: 3px;
 }
 
-.button__item {
+.button__item:active {
+    position: relative;
+    top: 1px;
+}
+
+.button__item.operator {
     background-color: #32C3FB;
     color: #ffffff;
 }
 
-.button__item:hover {
+.button__item.operator:hover {
     background-color: #32C391;
-}
-
-.button__item:active {
-    position: relative;
-    top: 1px;
 }
 
 .button__item.dec {
@@ -140,9 +144,4 @@ sup {
 
 .button__item.dec:hover {
     background-color: #E0E07D;
-}
-
-.button__item.dec:active {
-    position: relative;
-    top: 1px;
 }

@@ -130,7 +130,7 @@ $(function () {
             $container: $('.container'),
             $input: $('#result-string'),
             $decimals: $('.button__item.dec'),
-            $operators: $('.button__item'),
+            $operators: $('.button__item.operator'),
             prevValue: '',
             nowValue: '',
             prevOperator: '',
