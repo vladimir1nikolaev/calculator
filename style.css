@@ -1,9 +1,28 @@
+body {
+    background-image: url("source/img/background-image.jpg");
+}
+
 .container {
     width: 690px;
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
+}
+
+h1 {
+    text-align: center;
+    font-size: 50px;
+    font-family: SEGOE SCRIPT;
+    color: #A9A97A;
+}
+
+sup {
+    top: -.5em;
+    position: relative;
+    font-size: 75%;
+    line-height: 0;
+    vertical-align: baseline;
 }
 
 .col-1 {
@@ -65,90 +84,65 @@
     clear: both;
 }
 
-h1 {
-    text-align: center;
-    font-size: 24px;
-    font-family: Verdana;
-}
-
-.top-string-align {
+.b-result-string {
     padding-top: 10px;
     text-align: center;
     margin-bottom: 15px;
 }
 
-.result-string {
+.b-result-string__item {
     text-align: right;
     padding-right: 5px;
-}
-
-input[type="text"] {
-    border: 3px solid #cccccc;
+    border: 4px solid #32C3FB;
     border-radius: 5px;
     outline: none;
     height: 25px;
-    width: 460px;
+    width: 449px;
     color: #cccccc;
     font-size: 18px;
     font-family: Tahoma;
 }
 
-.buttons {
+.b-buttons {
     font-family: Arial;
     font-size: 15px;
-    /*font-weight: bold;*/
     padding: 6px 24px;
     text-decoration: none;
     text-align: center;
-    height: 25px;
-    width: 20px;
+    height: 30px;
+    width: 37px;
     border-radius: 6px;
-    border: 1px solid #dcdcdc;
-    display: inline-block;
+    border: 2px solid #07A;
+    display: block;
+    float: right;
+    margin-left: 3px;
 }
 
-.button-decimal {
-    background-color: #e0e0e0;
-    color: #666666;
-}
-
-.button-decimal:hover {
-    background-color: #E0E07D;
-}
-
-.button-decimal:active {
-    position: relative;
-    top: 1px;
-}
-
-.button-operator {
+.button__item {
     background-color: #32C3FB;
     color: #ffffff;
 }
 
-.button-operator:hover {
+.button__item:hover {
     background-color: #32C391;
 }
 
-.button-operator:active {
+.button__item:active {
     position: relative;
     top: 1px;
 }
 
-sup {
-    top: -.5em;
-    position: relative;
-    font-size: 75%;
-    line-height: 0;
-    vertical-align: baseline;
+.button__item.dec {
+    background-color: #e0e0e0;
+    color: #666666;
+    font-weight: bold;
 }
 
-.buttons-row {
-    /*margin-top: 10px;*/
-    /*display: inline-block;*/
-    /*position: relative;*/
-    /*padding-left: 283px;*/
-    /*float: right;*/
-    /*clear: both;*/
-    /*margin-right: 162px;*/
+.button__item.dec:hover {
+    background-color: #E0E07D;
+}
+
+.button__item.dec:active {
+    position: relative;
+    top: 1px;
 }

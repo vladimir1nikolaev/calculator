@@ -129,8 +129,8 @@ $(function () {
         var app = {
             $container: $('.container'),
             $input: $('#result-string'),
-            $decimals: $('.button-decimal'),
-            $operators: $('.button-operator'),
+            $decimals: $('.button__item.dec'),
+            $operators: $('.button__item'),
             prevValue: '',
             nowValue: '',
             prevOperator: '',
