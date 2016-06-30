@@ -6,6 +6,64 @@
     margin-left: auto;
 }
 
+.col-1 {
+    width: 115px;
+}
+
+.col-2 {
+    width: 230px;
+}
+
+.col-3 {
+    width: 345px;
+}
+
+.col-4 {
+    width: 460px;
+}
+
+.col-5 {
+    width: 575px;
+}
+
+.col-6 {
+    width: 690px;
+}
+
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6 {
+    display: inline;
+    float: left;
+    padding-bottom: 5px;
+}
+
+.offset-1 {
+    padding-left: 115px
+}
+
+.offset-2 {
+    padding-left: 230px
+}
+
+.offset-3 {
+    padding-left: 345px
+}
+
+.offset-4 {
+    padding-left: 460px
+}
+
+.offset-5 {
+    padding-left: 575px
+}
+
+.offset-6 {
+    padding-left: 690px
+}
+
+.row {
+    float: left;
+    clear: both;
+}
 
 h1 {
     text-align: center;
@@ -28,27 +86,30 @@ input[type="text"] {
     border: 3px solid #cccccc;
     border-radius: 5px;
     outline: none;
-    height: 24px;
-    width: 356px;
+    height: 25px;
+    width: 460px;
     color: #cccccc;
     font-size: 18px;
     font-family: Tahoma;
 }
 
-.button-decimal {
-    background-color: #e0e0e0;
-    border-radius: 6px;
-    border: 1px solid #dcdcdc;
-    display: inline-block;
-    color: #666666;
+.buttons {
     font-family: Arial;
     font-size: 15px;
-    font-weight: bold;
+    /*font-weight: bold;*/
     padding: 6px 24px;
     text-decoration: none;
     text-align: center;
     height: 25px;
     width: 20px;
+    border-radius: 6px;
+    border: 1px solid #dcdcdc;
+    display: inline-block;
+}
+
+.button-decimal {
+    background-color: #e0e0e0;
+    color: #666666;
 }
 
 .button-decimal:hover {
@@ -62,17 +123,7 @@ input[type="text"] {
 
 .button-operator {
     background-color: #32C3FB;
-    border-radius: 6px;
-    border: 1px solid #dcdcdc;
-    display: inline-block;
     color: #ffffff;
-    font-family: Arial;
-    font-size: 15px;
-    padding: 6px 24px;
-    text-decoration: none;
-    text-align: center;
-    height: 25px;
-    width: 20px;
 }
 
 .button-operator:hover {
@@ -93,11 +144,11 @@ sup {
 }
 
 .buttons-row {
-    margin-top: 10px;
-    display: inline-block;
-    position: relative;
+    /*margin-top: 10px;*/
+    /*display: inline-block;*/
+    /*position: relative;*/
     /*padding-left: 283px;*/
-    float: right;
-    clear: both;
-    margin-right: 162px;
+    /*float: right;*/
+    /*clear: both;*/
+    /*margin-right: 162px;*/
 }

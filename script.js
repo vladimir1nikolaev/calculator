@@ -128,7 +128,7 @@ $(function () {
 
         var app = {
             $container: $('.container'),
-            $input: this.$container.find('#result-string'),
+            $input: $('#result-string'),
             $decimals: $('.button-decimal'),
             $operators: $('.button-operator'),
             prevValue: '',
