@@ -2,14 +2,6 @@ body {
     background-image: url("source/img/background-image.jpg");
 }
 
-.container {
-    width: 690px;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-}
-
 h1 {
     text-align: center;
     font-size: 50px;
@@ -23,6 +15,14 @@ sup {
     font-size: 75%;
     line-height: 0;
     vertical-align: baseline;
+}
+
+.container {
+    width: 690px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .col-1 {
@@ -98,7 +98,7 @@ sup {
     outline: none;
     height: 25px;
     width: 449px;
-    color: #cccccc;
+    color: #666666;
     font-size: 18px;
     font-family: Tahoma;
 }
