@@ -1,4 +1,6 @@
 $(function () {
+    
+    var calculator = new Calculator({el: '.container'});
 
         function updateInputValue(curr) {
             if (!!app.nowOperator) app.$input.val('0');
@@ -138,6 +140,7 @@ $(function () {
         };
 
         app.$decimals.on('click', function (evt) {
+            this.data('d')
             var number = evt.target.id;
             updateInputValue(number);
         });
