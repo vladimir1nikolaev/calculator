@@ -103,11 +103,10 @@ sup {
     font-family: Tahoma;
 }
 
-.b-button {
+.b-buttons {
 
 }
-
-.b-button__item {
+.b-buttons .item {
     font-family: Arial;
     font-size: 15px;
     padding: 6px 24px;
@@ -121,27 +120,44 @@ sup {
     float: right;
     margin-left: 3px;
 }
+/*.b-buttons .item.active{*/
 
-.button__item:active {
+/*}*/
+/*.b-button__item {*/
+    /*font-family: Arial;*/
+    /*font-size: 15px;*/
+    /*padding: 6px 24px;*/
+    /*text-decoration: none;*/
+    /*text-align: center;*/
+    /*height: 30px;*/
+    /*width: 37px;*/
+    /*border-radius: 6px;*/
+    /*border: 2px solid #07A;*/
+    /*display: block;*/
+    /*float: right;*/
+    /*margin-left: 3px;*/
+/*}*/
+
+.b-buttons .item:active {
     position: relative;
     top: 1px;
 }
 
-.button__item.operator {
+.b-buttons .item.operator {
     background-color: #32C3FB;
     color: #ffffff;
 }
 
-.button__item.operator:hover {
+.b-buttons .item.operator:hover {
     background-color: #32C391;
 }
 
-.button__item.dec {
+.b-buttons .item.decimal {
     background-color: #e0e0e0;
     color: #666666;
     font-weight: bold;
 }
 
-.button__item.dec:hover {
+.b-buttons .item.decimal:hover {
     background-color: #E0E07D;
 }

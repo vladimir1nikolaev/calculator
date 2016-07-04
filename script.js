@@ -162,3 +162,18 @@ $(function () {
 
     }
 );
+
+
+function rabbitHole(node){
+    if(node._data && node._data.clones && node._data.clones.length){
+        node._data.clones.forEach(function(clone){
+            rabbitHole(clone)})
+    } else if(node._items && node._items.length){
+        node._items.forEach(function(item){
+            rabbitHole(item)})
+    } else {
+        console.log(node.fullPath());
+    }
+}
+
+rabbitHole(api);
