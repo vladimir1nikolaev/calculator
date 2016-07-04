@@ -15,7 +15,7 @@
     <div class="row">
         <div class="col-6">
             <div class="b-result-string">
-                <input id="result-string" class="b-result-string__item" type="text" value="0" disabled/>
+                <input data-result="result-string" id="result-string" class="item" type="text" value="0" disabled/>
             </div>
         </div>
     </div>
@@ -23,49 +23,50 @@
         <div class="row">
             <div class="offset-2 col-3 b-buttons">
                 <div class="item operator"><sup>y</sup>√x</div>
-                <div id="delenie" class="item operator">/</div>
-                <div id="delete" class="item operator">C</div>
+                <div data-button="delenie" class="item operator">/</div>
+                <div data-button="delete" class="item operator">C</div>
             </div>
         </div>
         <div class="row">
             <div class="offset-1 col-4 b-buttons">
-                <div id="sqrt" class="item operator">√</div>
-                <div data-d="pisca" id="multiplic" class="item operator">*</div>
-                <div id="9" class="item decimal">9</div>
-                <div id="8" class="item decimal">8</div>
-                <div id="7" class="item decimal">7</div>
+                <div data-button="sqrt" class="item operator">√</div>
+                <div data-button="multiplic" class="item operator">*</div>
+                <div data-button="nine" class="item decimal">9</div>
+                <div data-button="eight" class="item decimal">8</div>
+                <div data-button="seven" class="item decimal">7</div>
             </div>
         </div>
         <div class="row">
             <div class="offset-1 col-4 b-buttons">
-                <div id="percent" class="item operator">%</div>
-                <div id="subtraction" class="item operator">-</div>
-                <div id="6" class="item decimal">6</div>
-                <div id="5" class="item decimal">5</div>
-                <div id="4" class="item decimal">4</div>
+                <div data-button="percent" class="item operator">%</div>
+                <div data-button="subtraction" class="item operator">-</div>
+                <div data-button="six" class="item decimal">6</div>
+                <div data-button="five" class="item decimal">5</div>
+                <div data-button="four" class="item decimal">4</div>
             </div>
         </div>
         <div class="row">
             <div class="offset-1 col-4 b-buttons">
-                <div id="decUnderOne" class="item operator">1/x</div>
-                <div id="sum" class="item operator">+</div>
-                <div id="3" class="item decimal">3</div>
-                <div id="2" class="item decimal">2</div>
-                <div id="1" class="item decimal">1</div>
+                <div data-button="decUnderOne" class="item operator">1/x</div>
+                <div data-button="sum" class="item operator">+</div>
+                <div data-button="three" class="item decimal">3</div>
+                <div data-button="two" class="item decimal">2</div>
+                <div data-button="one" class="item decimal">1</div>
             </div>
         </div>
         <div class="row">
             <div class="offset-1 col-4 b-buttons">
-                <div id="x^y" class="item operator">x<sup>y</sup></div>
-                <div id="count-up" class="item operator">=</div>
-                <div id="." class="item decimal">.</div>
-                <div id="0" class="item decimal">0</div>
-                <div id="change-polar" class="item operator">+/-</div>
+                <div data-button="xStepenY" class="item operator">x<sup>y</sup></div>
+                <div data-button="count_up" class="item operator">=</div>
+                <div data-button="dote" class="item decimal">.</div>
+                <div data-button="zero" class="item decimal">0</div>
+                <div data-button="change_polar" class="item operator">+/-</div>
             </div>
         </div>
     </div>
 </div>
 <script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="script.js" type="text/javascript"></script>
+<script src="calculator.js" type="text/javascript"></script>
 </body>
 </html>
