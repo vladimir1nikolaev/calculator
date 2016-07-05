@@ -1,10 +1,11 @@
 var Calculator;
-var tmps = {
-    first: [],
-    second: []
-};
+
 Calculator = function (opt) {
     var that = this;
+    this.nowOperator = '';
+    this.elems = [];
+    // this.operations = {};
+    // this.secondEl = '';
     // console.log(this.getButton());
     this.$el = $(opt.el);
     this.getButton().map(function (item) {
@@ -12,7 +13,7 @@ Calculator = function (opt) {
         if (that[$item.data('button')]) {
             that.on.call($item, 'click', function (evt) {
                 // console.log('я сработал');
-                that[$item.data('button')]();
+                that[$item.data('button')]($item);
             });
         }
     });
@@ -28,10 +29,11 @@ Calculator.prototype.on = function (event, callback) {
     $(this).on(event, callback);
 };
 Calculator.prototype.showResult = function (dec, isNotNum) {
-    console.log(dec);
+    // console.log(dec);
     // this.$el.find('#result-string').val(); // строка вывода результата
     var haveDot = false;
     var resultStr = this.$el.find('#result-string').val();
+    // console.log(resultStr);
     if (isNotNum) {
         for (var i = 0; i < resultStr.length; i++) {
             if (resultStr[i] === dec) {
@@ -48,58 +50,88 @@ Calculator.prototype.showResult = function (dec, isNotNum) {
 
 };
 
-Calculator.prototype.getNumbers = function (dec, isNotNum) {
-    if (!isNotNum) {
-        tmps.first.push(dec);
-    } else if (tmps.second === []) {
-        tmps.second = tmps.first;
-    } else {
+// Calculator.prototype.getNumbers = function (dec, isNotNum) {
+//     if (!isNotNum) {
+//         tmps.first.push(dec);
+//     } else if (tmps.second === []) {
+//         tmps.second = tmps.first;
+//     } else {
+//
+//     }
+// };
 
+Calculator.prototype.decimal = function (item) {
+    if (item.data('args') !== '.') {
+        this.showResult(item.data('args'), false)
+    } else {
+        this.showResult(item.data('args'), true);
+    }
+    // console.log(item);
+};
+
+Calculator.prototype.operator = function (item) {
+    if (item.data('args').length === 1) {
+        if (this.nowOperator === '') {
+            // this.firstEl = Number(this.$el.find('#result-string').val());
+            this.showResult(item.data('args'), true);
+            this.nowOperator = item.data('args');
+        } else {
+            // console.log(this.elems);
+            this.getResult('two', item);
+        }
+    } else {
+        this.getResult('one', item);
     }
 };
 
-Calculator.prototype.nine = function () {
-    this.showResult('9', false);
-};
+Calculator.prototype.getResult = function (way, item) {
+    var first;
+    var second;
+    var result;
+    if (way === 'two') {
+        this.elems = this.$el.find('#result-string').val().split(this.nowOperator);
+        first = Number(this.elems[0]);
+        second = Number(this.elems[1]);
+        switch (item.data('args')) {
+            case '/':
+                if (second !== 0) {
+                    result = first / second;
+                    this.$el.find('#result-string').val(result.toString());
+                } else {
+                    alert('Делить на ноль нельзя!');
+                    // setInitState();
+                }
+                break;
+            case '*':
+                result = firstSum * secondSum;
+                app.$input.val(result.toString());
+                break;
+            case '-':
+                result = firstSum - secondSum;
+                app.$input.val(result.toString());
+                break;
+            case '+':
+                result = firstSum + secondSum;
+                app.$input.val(result.toString());
+                break;
+            case '^':
+                result = Math.pow(firstSum, secondSum)
+                app.$input.val(result.toString());
+                break;
+            case '=':
+                if (!!result) {
+                    app.$input.val(result.toString());
+                    app.prevValue = app.$input.val()
+                } else {
+                    app.$input.val('0');
+                }
+                app.prevOperator = '';
+                break;
 
-Calculator.prototype.eight = function () {
-    this.showResult('8', false);
-};
+        }
+    } else {
 
-Calculator.prototype.seven = function () {
-    this.showResult('7', false);
-};
-
-Calculator.prototype.six = function () {
-    this.showResult('6', false);
-};
-
-Calculator.prototype.five = function () {
-    this.showResult('5', false);
-};
-
-Calculator.prototype.four = function () {
-    this.showResult('4', false);
-};
-
-Calculator.prototype.three = function () {
-    this.showResult('3', false);
-};
-
-Calculator.prototype.two = function () {
-    this.showResult('2', false);
-};
-
-Calculator.prototype.one = function () {
-    this.showResult('1', false);
-};
-
-Calculator.prototype.zero = function () {
-    this.showResult('0', false);
-};
-
-Calculator.prototype.dote = function () {
-    this.showResult('.', true);
+    }
 };
 
 Calculator.prototype.sum = function () {
