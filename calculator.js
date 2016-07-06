@@ -86,71 +86,21 @@ Calculator.prototype.operator = function (item) {
 Calculator.prototype.getResult = function (way, item) {
     var first;
     var second;
-    var result;
     if (way === 'two') {
         this.elems = this.rs.val().split(this.nowOperator);
         first = Number(this.elems[0]);
         second = Number(this.elems[1]);
         this.operations[this.nowOperator].call(this, first, second);
-        // switch (this.nowOperator) {
-        //     case '/':
-        //         if (second !== 0) {
-        //             result = first / second;
-        //             this.rs.val(result.toString());
-        //         } else {
-        //             alert('Делить на ноль нельзя!');
-        //             this.setInitState();
-        //         }
-        //         break;
-        //     case '*':
-        //         result = first * second;
-        //         this.rs.val(result.toString());
-        //         break;
-        //     case '-':
-        //         result = first - second;
-        //         this.rs.val(result.toString());
-        //         break;
-        //     case '+':
-        //         result = first + second;
-        //         this.rs.val(result.toString());
-        //         break;
-        //     case '^':
-        //         result = Math.pow(first, second);
-        //         this.rs.val(result.toString());
-        //         break;
-        //     case '%':
-        //         result = first / 100 * second;
-        //         this.rs.val(result.toString());
-        //     case '=':
-        //         break;
-        // }
     } else {
         first = Number(this.rs.val());
-        switch (item.data('args')) {
-            case 'delete':
-                this.setInitState();
-                break;
-            case 'sqrt':
-                if (first >= 0) {
-                    result = Math.sqrt(first);
-                    this.rs.val(result.toString());
-                } else {
-                    alert('Нельзя получить корень иррационального числа!');
-                    this.setInitState();
-                }
-                break;
-            case 'change_polar':
-                result = first * -1;
-                this.rs.val(result.toString());
-                break;
-            case 'decUnderOne':
-                result = 1 / first;
-                this.rs.val(result.toString());
-                break;
-
-        }
+        this.operations[item.data('args')].call(this, first);
     }
-    this.nowOperator = '';
+    if (item.data('args').length === 1 && item.data('args') !== '=') {
+        this.nowOperator = item.data('args');
+        this.rs.val(this.rs.val() + item.data('args'));
+    } else {
+        this.nowOperator = '';
+    }
 };
 
 Calculator.prototype.setInitState = function () {
@@ -190,4 +140,25 @@ Calculator.prototype.percent = function (first, second) {
 
 Calculator.prototype.count_up = function (first, second) {
     this.rs.val(this.rs.val());
+};
+
+Calculator.prototype.delete = function (first) {
+    this.setInitState();
+};
+
+Calculator.prototype.sqrt = function (first) {
+    if (first >= 0) {
+        this.rs.val(Math.sqrt(first).toString());
+    } else {
+        alert('Нельзя получить корень иррационального числа!');
+        this.setInitState();
+    }
+};
+
+Calculator.prototype.change_polar = function (first) {
+    this.rs.val((first * -1).toString());
+};
+
+Calculator.prototype.decUnderOne = function (first) {
+    this.rs.val((1 / first).toString());
 };
